@@ -38,7 +38,6 @@ body {
     max-width: 400px;
     padding: 2em;
     margin: 0 auto;
-    background: blue;
 }
 
 .article:first-child {
@@ -47,6 +46,18 @@ body {
 
 .article:last-child {
     border-radius: 0 0 15px 15px;
+}
+
+.article--sedans {
+    background: var(--bright-orange);
+}
+
+.article--suvs {
+    background: var(--dark-cyan);
+}
+
+.article--luxury {
+    background: var(--very-dark-cyan);
 }
 
 .article__img {
@@ -82,4 +93,28 @@ body {
     border-radius: 30px;
     text-decoration: none;
     cursor: pointer;
+    transition-property: background, color, border;
+    transition: .3s ease;
+}
+
+.article__link:hover {
+    color: var(--transparent-white);
+    background: transparent;
+    border: 1px solid var(--transparent-white);
+}
+
+.article__link:active {
+    text-decoration: underline;
+}
+
+.article__link--sedans {
+    color: var(--bright-orange);
+}
+
+.article__link--suvs {
+    color: var(--dark-cyan);
+}
+
+.article__link--luxury {
+    color: var(--very-dark-cyan);
 }

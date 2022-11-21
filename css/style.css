@@ -21,55 +21,55 @@ body {
     font-size: 15px;
     color: var(--transparent-white);
     background: var(--very-light-gray);
+    min-height: 100vh;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
-    max-width: 768px;
-    height: 100vh;
-    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: max-content;
-    place-content: center;
+    grid-template-areas: "sedans"
+                         "suvs"
+                         "luxury";
+    place-items: center;
 }
 
 .article {
-    width: 90%;
-    max-width: 300px;
-    padding: 2em;
-    margin: 0 auto;
-}
-
-.article:first-child {
-    border-radius: 15px 15px 0 0;
-}
-
-.article:last-child {
-    border-radius: 0 0 15px 15px;
+    max-width: 350px;
+    min-height: 390px;
+    padding: 2.5em;
+    background: blue;
 }
 
 .article--sedans {
+    grid-area: sedans;
     background: var(--bright-orange);
 }
-
 .article--suvs {
+    grid-area: suvs;
     background: var(--dark-cyan);
 }
-
 .article--luxury {
-    background: var(--very-dark-cyan);
+    grid-area: luxury;
+    background: var(--very-dark-cyan)
 }
 
 .article__img {
     display: inline-block;
-    width: 20%;
-    margin-bottom: 1em;
+    max-width: 30%;
 }
 
 .article__text-group {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+    margin-top: 1.5em;
 }
 
 .article__h2 {
@@ -78,69 +78,46 @@ body {
     font-size: 2em;
     color: var(--very-light-gray);
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .article__p {
     font-weight: 400;
+    padding-right: 2.5em;
     line-height: 1.5;
 }
 
 .article__link {
     display: inline-block;
-    width: max-content;
+    max-width: max-content;
     background: var(--very-light-gray);
+    margin-left: .5em;
     padding: 1em 1.5em;
     border-radius: 30px;
     text-decoration: none;
     cursor: pointer;
-    transition-property: background, color, border;
-    transition: .3s ease;
+    transition-property: background, color;
+    transition: .2s ease;
 }
 
 .article__link:hover {
-    color: var(--transparent-white);
+    color: var(--very-light-gray);
     background: transparent;
-    border: 1px solid var(--transparent-white);
+    border: 2px solid var(--transparent-white);
 }
 
 .article__link:active {
     text-decoration: underline;
 }
 
-.article__link--sedans {
-    color: var(--bright-orange);
-}
+.article__link--sedans {color: var(--bright-orange)}
+.article__link--suvs {color: var(--dark-cyan)}
+.article__link--luxury {color: var(--very-dark-cyan)}
 
-.article__link--suvs {
-    color: var(--dark-cyan);
-}
-
-.article__link--luxury {
-    color: var(--very-dark-cyan);
-}
-
+/* Desktop */
 @media only screen and (min-width: 1024px) {
-    body {
-        max-width: 1400px;
-    }
-
     .main {
-        grid-template-columns: repeat(3, max-content);
-    }
-
-    .article {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 500px;
-    }
-
-    .article:first-child {
-        border-radius: 15px 0 0 15px;
-    }
-    
-    .article:last-child {
-        border-radius: 0 15px 15px 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "sedans suvs luxury";
     }
 }

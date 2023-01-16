@@ -1,6 +1,6 @@
 # Frontend Mentor - 3-column preview card component
 
-:pushpin: Práctica proveniente de FrontendMentor. Está realizado usando `<HTML>`, `<CSS>` y `<JS>`.
+:pushpin: Práctica proveniente de FrontendMentor. Está realizado usando `<HTML>` y `<CSS>`.
 
 :pushpin: Maquetada con grid y flexbox.
 
